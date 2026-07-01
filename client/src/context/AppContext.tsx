@@ -53,7 +53,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  const apiBase = 'http://localhost:5001/api/v1';
+  const apiBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api/v1';
 
   // Load from localStorage on mount
   useEffect(() => {
