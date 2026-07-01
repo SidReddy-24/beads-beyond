@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,450&family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── Map Astley Clarke colors dynamically to CSS theme variables ── */
+  --color-white:      var(--white);
+  --color-babypink:   var(--babypink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-accent:var(--pink-accent);
+  --color-gold:       #D4AF37;
+  --color-rosegold:   var(--rosegold);
+  --color-charcoal:   var(--fg);
+  --color-grey-light: var(--grey-light);
+  --color-grey-mid:   var(--grey-mid);
+  --color-grey-muted: var(--grey-muted);
+  --color-ivory:      var(--ivory);
+  --color-dark:       var(--fg);
+
+  /* ── Fonts ── */
+  --font-serif:     'Cormorant Garamond', serif;
+  --font-sans:      'Montserrat', sans-serif;
+  --font-playfair:  var(--font-playfair-var, 'Cormorant Garamond', serif);
+  --font-poppins:   var(--font-poppins-var, 'Montserrat', sans-serif);
+}
+
+/* ── Light Mode Palette (Default) ── */
+:root {
+  --bg:          #FFFFFF;
+  --fg:          #231F20;
+  --white:       #FFFFFF;
+  --babypink:    #FCF3F4;
+  --pink-light:  #FBF0F1;
+  --pink-accent: #E5B5B8;
+  --rosegold:    #C88C96;
+  --grey-light:  #F7F7F7;
+  --grey-mid:    #EBEBEB;
+  --grey-muted:  #8E8A8B;
+  --ivory:       #F5F0EB;
+  
+  --accent:      #FCF3F4;
+  --rose-gold:   #C88C96;
+}
+
+/* ── Refined Astley Clarke Dark Mode Palette ── */
+.dark {
+  --bg:          #161214;
+  --fg:          #FAF6F7;
+  --white:       #1E1A1C;
+  --babypink:    #2C1F22;
+  --pink-light:  #36282B;
+  --pink-accent: #D59498;
+  --rosegold:    #D59DA6;
+  --grey-light:  #1B1618;
+  --grey-mid:    #2A2326;
+  --grey-muted:  #A49EA0;
+  --ivory:       #2A2326;
+  
+  --accent:      #2C1F22;
+  --rose-gold:   #D59DA6;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.3;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--pink-accent); border-radius: 99px; }
+
+/* ── Selection ── */
+::selection { background: var(--babypink); color: var(--rosegold); }
+
+/* ── Astley Clarke Elegant Buttons ── */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--fg);
+  color: var(--bg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--fg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-luxury:hover {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.2rem;
+  background-color: transparent;
+  color: var(--fg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--fg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-luxury-outline:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.btn-pink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--babypink);
+  color: var(--fg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--pink-accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pink:hover {
+  background-color: var(--pink-accent);
+  color: var(--bg);
+}
+
+/* ── Gold Gradient Button (used across cart, checkout, product, account pages) ── */
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A96E 60%, #C88C96 100%);
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.gold-gradient:hover {
+  opacity: 0.88;
+}
+
+/* ── Luxury Shadow ── */
+.luxury-shadow {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Input fields ── */
+.input-luxury {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--grey-mid);
+  color: var(--fg);
+  padding: 0.75rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-luxury:focus {
+  border-color: var(--rosegold);
+  background: var(--bg);
+}
+
+.border-ivory { border: 1px solid var(--ivory); }
+
+/* ── Cards / Layout ── */
+.luxury-card {
+  background: var(--bg);
+  border: 1px solid var(--grey-light);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.luxury-card:hover {
+  border-color: var(--pink-accent);
+  box-shadow: 0 10px 30px rgba(229, 181, 184, 0.15);
+}
+
+.pink-glow {
+  box-shadow: 0 0 20px rgba(229, 181, 184, 0.3);
+}
+
+/* ── Astley Clarke Custom Header and navigation ── */
+.nav-link {
+  position: relative;
+  color: var(--grey-muted);
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--rosegold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--fg);
+}
+
+.nav-link:hover::after {
+  width: 70%;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rosegold);
+}
+
+.pink-gradient {
+  background: linear-gradient(135deg, var(--babypink) 0%, var(--bg) 100%);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--grey-light) 25%, var(--grey-mid) 50%, var(--grey-light) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-xxs { font-size: 0.65rem; }
+.line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ── Theme-aware utility overrides ── */
+.theme-bg   { background-color: var(--bg); }
+.theme-fg   { color: var(--fg); }
+.theme-card { background-color: var(--babypink); border: 1px solid var(--grey-mid); }
